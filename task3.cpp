@@ -6,7 +6,6 @@ struct Employee
     string name;
     int hoursWorked;
     float hourlyRate;
-    float salary;
 };
 
 int main()
@@ -32,14 +31,14 @@ int main()
         cout << "Enter the hourly rate of this employee: $";
         cin >> employees[i].hourlyRate;
 
-        employees[i].salary = employees[i].hoursWorked * employees[i].hourlyRate;
+        salary[i] = employees[i].hoursWorked * employees[i].hourlyRate;
         cout << endl;
     }
 
     cout << "EMPLOYEE SALARIES" << endl;
     for (int i = 0; i < n; i++)
     {
-        cout << employees[i].name << ": $" << employees[i].salary << endl;
+        cout << employees[i].name << ": $" << salary[i] << endl;
     }
     
     delete[] (employees);
