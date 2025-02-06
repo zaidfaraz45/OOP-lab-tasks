@@ -20,11 +20,11 @@ int main()
     for (int i = 0; i < n; i++)
     {
         cout << "Enter the title of book " << i + 1 << ": ";
-        cin >> ws;
+        cin.ignore();
         getline(cin, Books[i].title);
 
         cout << "Enter the author of book " << i + 1 << ": ";
-        cin >> ws;
+        cin.ignore();
         getline(cin, Books[i].author);
 
         cout << "Enter the year of book " << i + 1 << ": ";

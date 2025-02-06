@@ -22,7 +22,7 @@ int main()
     for (int i = 0; i < n; i++)
     {
         cout << "Enter the name of employee " << i + 1 << ": ";
-        cin >> ws;
+        cin.ignore();
         getline(cin, employees[i].name);
 
         cout << "Enter the hours worked by this employee: ";

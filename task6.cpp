@@ -22,11 +22,11 @@ int main()
     for (int i = 0; i < n; i++)
     {
         cout << endl << "Enter the name of student " << i + 1 << ": ";
-        cin >> ws;
+        cin.ignore();
         getline(cin, students[i].name);
 
         cout << "Enter the roll number of this student: ";
-        cin >> ws;
+        cin.ignore();
         getline(cin, students[i].rollnumber);
 
         for (int j = 0; j < 3; j++)
