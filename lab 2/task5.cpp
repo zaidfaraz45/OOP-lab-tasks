@@ -25,7 +25,7 @@ int main()
 
     cout << endl << "Sum of the array is " << sum << "." << endl;
 
-    delete[] (array);
+    delete[] array;
 
     return 0;
 }
