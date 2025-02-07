@@ -41,6 +41,6 @@ int main()
         cout << employees[i].name << ": $" << salary[i] << endl;
     }
     
-    delete[] (employees);
+    delete[] employees;
     return 0;
 }
