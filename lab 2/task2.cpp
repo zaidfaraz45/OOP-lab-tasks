@@ -5,10 +5,10 @@ int main()
 {
     int row, col;
 
-    cout << "Enter number of rows for the first matrix: ";
+    cout << "Enter number of rows for the matrices: ";
     cin >> row;
 
-    cout << "Enter number of columns for the first matrix: ";
+    cout << "Enter number of columns for the matrices: ";
     cin >> col;
 
     int **matrix1 = new int*[row];
