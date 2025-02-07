@@ -22,6 +22,7 @@ int main()
         matrix2[i] =  new int[row1col2];
     }
 
+    cout << endl;
     for (int i = 0; i < row1col2; i++)
     {
         for (int j = 0; j < col1row2; j++)
@@ -42,7 +43,7 @@ int main()
     }
 
     cout << "\nThe answer is:" << endl;
-    for (int i = 0; i < row1col2; i++)
+    for (int i = 0; i < col1row2; i++)
     {
         for (int j = 0; j < row1col2; j++)
         {

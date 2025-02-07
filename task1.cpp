@@ -24,7 +24,6 @@ int main()
         getline(cin, Books[i].title);
 
         cout << "Enter the author of book " << i + 1 << ": ";
-        cin.ignore();
         getline(cin, Books[i].author);
 
         cout << "Enter the year of book " << i + 1 << ": ";
@@ -45,7 +44,7 @@ int main()
         }
     }
 
-    delete[](Books);
+    delete[] Books;
 
     return 0;
 }

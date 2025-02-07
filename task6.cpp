@@ -26,7 +26,6 @@ int main()
         getline(cin, students[i].name);
 
         cout << "Enter the roll number of this student: ";
-        cin.ignore();
         getline(cin, students[i].rollnumber);
 
         for (int j = 0; j < 3; j++)
