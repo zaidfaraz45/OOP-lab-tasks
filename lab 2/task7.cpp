@@ -13,15 +13,16 @@ int main()
     int **matrix1 = new int*[row1col2];
     for (int i = 0; i < row1col2; i++)
     {
-        matrix1[i] =  new int[col1row2];
+        matrix1[i] = new int[col1row2];
     }
 
     int **matrix2 = new int*[col1row2];
     for (int i = 0; i < col1row2; i++)
     {
-        matrix2[i] =  new int[row1col2];
+        matrix2[i] = new int[row1col2];
     }
 
+    cout << endl;
     for (int i = 0; i < row1col2; i++)
     {
         for (int j = 0; j < col1row2; j++)
@@ -36,7 +37,6 @@ int main()
         for (int j = 0; j < row1col2; j++)
         {
             cout << "Enter row " << i + 1 << " column " << j + 1 << " of matrix 2: ";
-
             cin >> matrix2[i][j];
         }
     }
