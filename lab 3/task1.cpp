@@ -5,7 +5,7 @@ using namespace std;
 class Wallet
 {
     string OwnerName;
-    double totalBalance;     //total money in the account
+    double totalBalance = 0;     //total money in the account
     int transactionNum = 0;
     double *transactionHistory = new double[transactionNum];   //total money spent in transactions
 
@@ -42,6 +42,11 @@ class Wallet
                 cout << "Rs. " << transactionHistory[i] << endl;
             } 
         }
+
+        void deallocateMemory()
+        {
+            delete[] transactionHistory;
+        }
 };
 
 int main()
@@ -63,6 +68,8 @@ int main()
     wallet.spendMoney(100);
     wallet.spendMoney(500000);
     wallet.displayTransactions();
+
+    wallet.deallocateMemory();
 
     return 0;
 }
