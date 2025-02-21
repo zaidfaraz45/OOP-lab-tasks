@@ -65,7 +65,7 @@ class Car
             availability = obj.availability;
         }
 
-        ~Car(){}
+        ~Car(){cout << endl << "The car is removed from memory" << endl;}
 };
 
 int main()

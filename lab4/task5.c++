@@ -79,6 +79,7 @@ class Car
             {
                 cout << "The car is available!" << endl;
             }
+            else
             {
                 cout << "The car is not available!" << endl;
             }
@@ -86,7 +87,8 @@ class Car
             cout << "-----------------------------------" << endl;
         }
 
-        ~Car(){}
+        ~Car(){cout << endl << "The car is removed from memory" << endl;}
+        
 };
 
 int main()

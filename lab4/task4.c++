@@ -82,7 +82,8 @@ class Car
             }
         }
 
-        ~Car(){}
+        ~Car(){cout << endl << "The car is removed from memory" << endl;}
+        
 };
 
 int main()
