@@ -13,20 +13,13 @@ class Car
 
         Car() : brand("Unknown"), model("Generic"), rentalPrice(0.0), availability(true), totalRevenue(0.0), registrationNumber(0) {}
 
-        Car(string b, string m, float r, bool a, int n)
-        {
-            brand = b;
-            model = m;
-            rentalPrice = r;
-            availability = a;
-            registrationNumber = n;
-        }
+        Car(string b, string m, float r, bool a, int n) : brand(b), model(m), rentalPrice(r), availability(a), totalRevenue(0.0), registrationNumber(n) {}
 
         void rentalRequest()
         {
             if (availability == false)
             {
-                cout << "The car is already rented" << endl;
+                cout << "The car is already rented!" << endl;
             }
             else
             {
@@ -50,7 +43,7 @@ class Car
 
             else
             {
-                cout << "The car is already rented.";
+                cout << "The car is already rented!" << endl;
             }
         }
 
@@ -61,19 +54,18 @@ class Car
             rentalPrice = obj.rentalPrice;
             availability = obj.availability;
             totalRevenue = obj.totalRevenue;
-            registrationNumber = obj.registrationNumber; 
         }
 
         void updateRevenue(int days)
         {
-            if (this->availability == true) 
+            if (this->availability == false) 
             {
                 this->totalRevenue += this->rentalPrice * days;  
                 cout << "Total revenue is updated for " << this->brand << " " << this->model << ". Total revenue: " << this->totalRevenue << endl;
             }
             else
             {
-                cout << "The car is not available!" << endl;
+                cout << "The car is not rented!" << endl;
             }
         }
 
@@ -83,7 +75,13 @@ class Car
             cout << "Brand: " << brand << endl;
             cout << "Model: " << model << endl;
             cout << "Rental price: " << rentalPrice << endl;
-            cout << "Availability: " << availability << endl;
+            if (availability == true)
+            {
+                cout << "The car is available!" << endl;
+            }
+            {
+                cout << "The car is not available!" << endl;
+            }
             cout << "Total Revenue: " << totalRevenue << endl;
             cout << "-----------------------------------" << endl;
         }
@@ -94,11 +92,13 @@ class Car
 int main()
 {
     Car car1("Toyota", "Corolla", 1000, true, 1234);
-    Car car2;
-    car2 = car1;
+    car1.rentalRequest();
+
+    car1.applyDiscount(7);
+
+    car1.updateRevenue(10);
 
     car1.display();
-    car2.display();
 
     return 0;
 }

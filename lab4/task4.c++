@@ -71,14 +71,14 @@ class Car
 
         void updateRevenue(int days)
         {
-            if (this->availability == true) 
+            if (this->availability == false) 
             {
                 this->totalRevenue += this->rentalPrice * days;  
                 cout << "Total revenue is updated for " << this->brand << " " << this->model << ". Total revenue: " << this->totalRevenue << endl;
             }
             else
             {
-                cout << "The car is not available!" << endl;
+                cout << "The car is not rented!" << endl;
             }
         }
 
