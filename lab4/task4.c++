@@ -8,6 +8,7 @@ class Car
         string model;
         float rentalPrice;
         bool availability;
+        float totalRevenue;
 
         Car()
         {
@@ -15,6 +16,7 @@ class Car
             model = "Generic";
             rentalPrice = 0.0;
             availability = true;
+            totalRevenue = 0.0;
         }
 
         Car(string b, string m, float r, bool a)
@@ -63,6 +65,21 @@ class Car
             model = obj.model;
             rentalPrice = obj.rentalPrice;
             availability = obj.availability;
+            totalRevenue = obj.totalRevenue;
+
+        }
+
+        void updateRevenue(int days)
+        {
+            if (this->availability == true) 
+            {
+                this->totalRevenue += this->rentalPrice * days;  
+                cout << "Total revenue is updated for " << this->brand << " " << this->model << ". Total revenue: " << this->totalRevenue << endl;
+            }
+            else
+            {
+                cout << "The car is not available!" << endl;
+            }
         }
 
         ~Car(){}

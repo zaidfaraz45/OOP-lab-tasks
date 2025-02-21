@@ -5,9 +5,9 @@ using namespace std;
 class Wallet
 {
     string OwnerName;
-    double totalBalance = 0;     //total money in the account
+    double totalBalance = 0;     
     int transactionNum = 0;
-    double *transactionHistory = new double[transactionNum];   //total money spent in transactions
+    double *transactionHistory = new double[transactionNum];   
 
     public:
         void inputName()
