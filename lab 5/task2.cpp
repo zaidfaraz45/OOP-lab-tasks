@@ -17,14 +17,14 @@ class University
             }
         }
 
-        University(University &obj)
+        University(University &copy)
         {
-            ID = obj.ID;
-            name = obj.name;
+            ID = copy.ID;
+            name = copy.name;
             examScores = new string[3];
             for (int i = 0; i < 3; i++)
             {
-                examScores[i] = obj.examScores[i];
+                examScores[i] = copy.examScores[i];
             }
         }
 
@@ -52,7 +52,7 @@ int main()
     University university("24k-0636", "Zaid Faraz Syed", scores);
     university.display();
 
-    University university1(university);
+    University university1 = university;
     university1.display();
 
     return 0;
