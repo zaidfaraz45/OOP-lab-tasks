@@ -11,13 +11,13 @@ class Employees
     public:
         Employees(string n, string des) : name(n), designation(des) {}
     
-    void display() const
-    {
-        cout << "Name of the Employee: " << name << endl;
-        cout << "Designation of the employee: " << designation << endl;
-    }
+        void display() const
+        {
+            cout << "Name of the Employee: " << name << endl;
+            cout << "Designation of the employee: " << designation << endl;
+        }
 
-    ~Employees(){}
+        ~Employees(){}
 };
 
 class Projects
