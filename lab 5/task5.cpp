@@ -10,7 +10,7 @@ class Doctor
     public:
         Doctor(string n, string spec, int xp): name(n), specialization(spec), experience(xp) {}
 
-        void display()
+        void display() const
         {
             cout << "Doctor name: " << name << endl;
             cout << "Specialization: " << specialization << endl;
