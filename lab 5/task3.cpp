@@ -25,10 +25,10 @@ class Projects
     string title;
     string deadline;
     Employees *employees[10];
-    int employeeCount = 0;
+    int employeeCount;
 
     public:
-        Projects(string t, string d) : title(t), deadline(d) {}
+        Projects(string t, string d) : title(t), deadline(d), employeeCount(0) {}
 
         void addEmployees(Employees *emp)
         {
