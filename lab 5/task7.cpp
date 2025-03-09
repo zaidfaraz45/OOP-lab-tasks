@@ -69,8 +69,10 @@ class Inventory
                 {
                     products[i]->display();
                     found = true;
+                    break;
                 }
             }
+            
             if (!found)
             {
                 cout << "Not found!" << endl;
