@@ -4,10 +4,11 @@ using namespace std;
 
 class Employee
 {   
-    public:
+    protected:
         string name;
         float salary;
 
+    public:
         Employee(string n, float s) : name(n), salary(s) {}
 
         void display() const
@@ -17,7 +18,7 @@ class Employee
         } 
 };
 
-class Manager : public Employee
+class Manager : protected Employee
 {
     float bonus;
 
