@@ -3,21 +3,21 @@ using namespace std;
 
 class Apartment
 {
-    string id;
+    string Id;
     string address;
     string *ownerName;
 
     public:
-        Apartment(string id, string a, string owner): id(id), address(a) 
+        Apartment(string Id, string a, string owner): Id(Id), address(a) 
         {
             ownerName = new string(owner);
         }
 
-        Apartment(const Apartment& copy) : id (copy.id), address(copy.address), ownerName(copy.ownerName) {}
+        Apartment(const Apartment& copy) : Id (copy.Id), address(copy.address), ownerName(copy.ownerName) {}
 
         void display() const
         {
-            cout << "\nApartment Id: " << id << endl;
+            cout << "\nApartment Id: " << Id << endl;
             cout << "Address: " << address << endl;
             cout << "Owner name: " << *ownerName << endl;
         }
