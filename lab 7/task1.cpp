@@ -21,6 +21,7 @@ class Device
             else
             {
                 status = true;
+                cout << "The device has been turned on!" << endl;
             }
         }
 
@@ -28,11 +29,12 @@ class Device
         {
             if (status == false)
             {
-                cout << "The device is already off!" << endl;
+                cout << deviceName << " is already off!" << endl;
             }
             else
             {
                 status = false;
+                cout << deviceName << " has been turned off." << endl;
             }
         }
 
@@ -45,8 +47,8 @@ class Device
         {
             cout << "ID: " << deviceID << endl;
             cout << "Name: " << deviceName << endl;
-            cout << "Status: " << (status) ? cout << "on" << endl : cout << "off" << endl; 
-            cout << "Location: " << location << endl << endl;
+            cout << "Status: " << (status ? "on" : "off") << endl; 
+            cout << "Location: " << location << endl;
         }
 };
 
@@ -61,10 +63,7 @@ class Light: public Device
 
         void displayInfo() override
         {
-            cout << "ID: " << deviceID << endl;
-            cout << "Name: " << deviceName << endl;
-            cout << "Status: " << (status) ? cout << "on" << endl : cout << "off" << endl; 
-            cout << "Location: " << location << endl;
+            Device::displayInfo();
             cout << "Brightness level: " << brightnessLevel << endl;
             cout << "Color mode: " << colorMode << endl << endl;
         }        
@@ -80,9 +79,17 @@ class Thermostat: public Device
     public:
         Thermostat(string id, string name, bool stat, string loc, float t, string tM, float tT): Device(id, name, stat, loc), temperature(t), tempMode(tM), targetTemp(tT) {}
 
-        float getStatus() override
+        float getTemperature() 
         {
             return temperature;
+        }
+
+        void displayInfo() override
+        {
+            Device::displayInfo();
+            cout << "Current temperature: " << temperature << " degress celsius" << endl;
+            cout << "Temperature mode: " << tempMode << endl;
+            cout << "Target temperature: " << targetTemp << " degress celsius" << endl << endl;
         }
 };
 
@@ -99,6 +106,15 @@ class SecurityCamera: public Device
         void turnOn() override
         {
             recordingStatus = true;
+            cout << deviceName << " is recording!" << endl;
+        }
+
+         void displayInfo() override
+        {
+            Device::displayInfo();
+            cout << "Resolution: " << resolution << endl;
+            cout << "Recording status: " << (recordingStatus ? "Enabled" : "Disabled") << endl;
+            cout << "Night Vision: " << (nightVisionEnabled ? "Enabled" : "Disabled") << endl << endl;
         }
 };
 
@@ -113,13 +129,52 @@ class SmartPlug: public Device
 
         void turnOff() override
         {
-            cout << powerConsumption << endl;
+            if (status == true)
+            {
+                status = false;
+                cout << deviceName << "has been turned off!" << endl;
+                cout << "Power Consumption: " << powerConsumption << endl;
+            }
+            else
+            {
+                cout << deviceName << "is already off!" << endl;
+            }
+        }
+
+        void displayInfo() override
+        {
+            Device::displayInfo();
+            cout << "Power consumption: " << powerConsumption << "W" << endl;
+            cout << "Timer setting: " << timerSetting << " minutes" << endl << endl;
         }
 };
 
 int main()
 {
-    
+    Device* device;
 
+    Light light("0132", "Living Room Light", false, "Home", 9, "Warm White");
+    Thermostat thermostat("0245", "Smart Thermostat", true, "Office", 22.5, "Cooling", 24.0);
+    SecurityCamera camera("0356", "Front Door Camera", false, "Entrance", "1080p", false, true);
+    SmartPlug plug("0467", "Smart Plug", true, "Kitchen", 50, 30.0);
+
+     device = &light;
+    device->displayInfo();  
+    device->turnOn();
+    device->displayInfo();
+
+    device = &thermostat;
+    device->displayInfo();
+
+    device = &camera;
+    device->displayInfo();
+    device->turnOn();  
+    device->displayInfo();
+
+    device = &plug;
+    device->displayInfo();
+    device->turnOff();
+    device->displayInfo();
+    
     return 0;
 }

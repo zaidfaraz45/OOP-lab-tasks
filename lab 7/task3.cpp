@@ -15,12 +15,12 @@ class Ticket
 
         virtual void reserve()
         {
-
+            cout << "Reserving a ticket for " << passengerName << "!" << endl;
         }
 
         virtual void cancel()
         {
-
+            cout << "Cancelling a ticket for " << passengerName << "!" << endl;
         }
 
         virtual void displayTicketInfo()
