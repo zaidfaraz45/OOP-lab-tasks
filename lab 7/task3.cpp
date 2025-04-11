@@ -29,7 +29,7 @@ class Ticket
             cout << "Passenger name: " << passengerName << endl;
             cout << "Price: " << price << endl;
             cout << "Date: " << date << endl;
-            cout << "Destination" << destination << endl << endl;
+            cout << "Destination: " << destination << endl;
         }
 };
 
@@ -45,11 +45,7 @@ class FlightTicket: public Ticket
 
         void displayTicketInfo() override
         {
-            cout << "Ticket ID: " << ticketID << endl;
-            cout << "Passenger name: " << passengerName << endl;
-            cout << "Price: " << price << endl;
-            cout << "Date: " << date << endl;
-            cout << "Destination" << destination << endl;
+            Ticket::displayTicketInfo();
             cout << "Airline name: " << airlineName << endl;
             cout << "Flight number: " << flightNumber << endl;
             cout << "Seat class: " << seatClass << endl << endl;
@@ -68,7 +64,15 @@ class TrainTicket: public Ticket
 
         void reserve() override
         {
+            cout << "Reserving a seat for " << passengerName << " on Train #" << trainNumber << "(" << coachType << ")!" << endl;
+        }
 
+        void displayTicketInfo() override
+        {
+            Ticket::displayTicketInfo();
+            cout << "Train number: " << trainNumber << endl;
+            cout << "Coach type: " << coachType << endl;
+            cout << "Departure time: " << departureTime << endl << endl;
         }
 };
 
@@ -83,7 +87,14 @@ class BusTicket: public Ticket
 
         void cancel() override
         {
+            cout << "Cancelling bus ticket for " << passengerName << "! Refund issued for last-minute cancellation!" << endl;
+        }
 
+        void displayTicketInfo() override
+        {
+            Ticket::displayTicketInfo();
+            cout << "Bus company: " << busCompany << endl;
+            cout << "Seat number: " << seatNumber << endl << endl;
         }
 };
 
@@ -97,12 +108,40 @@ class ConcertTicket: public Ticket
     public:
         ConcertTicket(string id, string name, double p, string d, string dest, string aN, string ven, string sT): Ticket(id, name, p, d, dest), artistName(aN), venue(ven), seatType(sT) {}
 
-        void
+        void displayTicketInfo() override
+        {
+            cout << "Ticket ID: " << ticketID << endl;
+            cout << "Passenger name: " << passengerName << endl;
+            cout << "Price: " << price << endl;
+            cout << "Date: " << date << endl;
+            cout << "Venue: " << venue << endl;
+            cout << "Artist: " << artistName << endl;
+            cout << "Seat type: " << seatType << endl << endl;
+        }
 };
 
 int main()
 {
+    Ticket* t1 = new FlightTicket("FT001", "Ali", 1500.0, "2025-05-10", "Dubai", "Emirates", 717, "Business");
+    Ticket* t2 = new TrainTicket("TT002", "Sara", 800.0, "2025-04-20", "Lahore", 35, "AC", "09:00 AM");
+    Ticket* t3 = new BusTicket("BT003", "Ahmed", 500.0, "2025-04-22", "Islamabad", "SkyWays", 12);
+    Ticket* t4 = new ConcertTicket("CT004", "Zainab", 3000.0, "2025-06-15", "Karachi", "Atif Aslam", "Expo Center", "Front Row");
 
+    t1->reserve();
+    t1->displayTicketInfo();
+
+    t2->reserve(); 
+    t2->displayTicketInfo();
+
+    t3->cancel(); 
+    t3->displayTicketInfo();
+
+    t4->displayTicketInfo(); 
+
+    delete t1;
+    delete t2;
+    delete t3;
+    delete t4;
 
     return 0;
 }
