@@ -31,6 +31,8 @@ class Ticket
             cout << "Date: " << date << endl;
             cout << "Destination: " << destination << endl;
         }
+
+        virtual ~Ticket() {}
 };
 
 class FlightTicket: public Ticket

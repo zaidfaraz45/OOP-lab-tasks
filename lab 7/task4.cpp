@@ -24,6 +24,8 @@ class Person
         {
             cout << "Updating info for " << name << "!" << endl;
         }
+
+        virtual ~Person() {}
 };
 
 class Patient : public Person

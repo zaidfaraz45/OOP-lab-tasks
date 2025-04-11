@@ -41,6 +41,8 @@ class Product
             os << "Product ID: " << obj.productID << "\nProduct Name: " << obj.productName << "\nPrice: " << obj.price << "\nStock Quantity: " << obj.stockQuantity << endl;
             return os;
         }
+
+        virtual ~Product() {}
 };
 
 class Electronics : public Product 
