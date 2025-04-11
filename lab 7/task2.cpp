@@ -127,20 +127,28 @@ class Book : public Product
 
 int main() 
 {
-    Electronics e("E101", "Laptop", 1200.0, 5, 24, "Dell");
-    Clothing c("C202", "Shirt", 30.0, 20, 42, "Blue", "Cotton");
-    FoodItem f("F303", "Chocolate", 2.5, 100, "2025-06-01", 250);
-    Book b("B404", "C++ Guide", 50.0, 10, "Bjarne Stroustrup", "Programming");
+    Product* p1 = new Electronics("E101", "Laptop", 1200.0, 5, 24, "Dell");
+    Product* p2 = new Clothing("C202", "Shirt", 30.0, 20, 42, "Blue", "Cotton");
+    Product* p3 = new FoodItem("F303", "Chocolate", 2.5, 100, "2025-06-01", 250);
+    Product* p4 = new Book("B404", "C++ Guide", 50.0, 10, "Bjarne Stroustrup", "Programming");
 
-    e.displayProductInfo();
-    c.applyDiscount(5);
-    c.displayProductInfo();
-    f.displayProductInfo();
-    cout << "Bulk food price for 12 items: " << f.calculateTotalPrice(12) << endl << endl;
-    b.displayProductInfo();
+    p1->displayProductInfo();
 
-    double totalBulkPrice = e + b;
+    p2->applyDiscount(5);
+    p2->displayProductInfo();
+
+    p3->displayProductInfo();
+    cout << "Bulk food price for 12 items: " << p3->calculateTotalPrice(12) << endl << endl;
+
+    p4->displayProductInfo();
+
+    double totalBulkPrice = *p1 + *p4;  
     cout << "Total price of Laptop and C++ Guide: " << totalBulkPrice << endl;
+
+    delete p1;
+    delete p2;
+    delete p3;
+    delete p4;
 
     return 0;
 }
