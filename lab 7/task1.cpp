@@ -158,7 +158,7 @@ int main()
     SecurityCamera camera("0356", "Front Door Camera", false, "Entrance", "1080p", false, true);
     SmartPlug plug("0467", "Smart Plug", true, "Kitchen", 50, 30.0);
 
-     device = &light;
+    device = &light;
     device->displayInfo();  
     device->turnOn();
     device->displayInfo();
