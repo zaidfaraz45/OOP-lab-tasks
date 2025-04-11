@@ -124,7 +124,7 @@ class Administrator : public Person
 
 int main()
 {
-    string docPatients[] = { "P001", "P003" };
+    string docPatients[] = {"P001", "P003"};
 
     Person* p1 = new Patient("Ayesha", 30, "0300-1234567", "Karachi", "P001", "Diabetes", "Dr. Kamal");
     Person* p2 = new Doctor("Dr. Kamal", 45, "0311-9988776", "Lahore", "Cardiologist", 2000.0, docPatients, 2);
