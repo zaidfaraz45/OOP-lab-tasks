@@ -27,7 +27,7 @@ class AirFreight: public Shipment
         {
             cout << "Details:\n";
             cout << trackingNumber << endl;
-            cout << weight << " tonnes\n\n";
+            cout << weight << " kg\n\n";
         }
 };
 
@@ -45,7 +45,7 @@ class GroundShipment: public Shipment
         {
             cout << "Details:\n";
             cout << trackingNumber << endl;
-            cout << weight << " tonnes\n\n";
+            cout << weight << " kg\n\n";
         }
 };
 
