@@ -11,12 +11,12 @@ class WeatherSensor
 class Thermometer: public WeatherSensor
 {
     public:
-        void readData()
+        void readData() override
         {
             cout << "Reading data for thermometer.....\n";
         }
 
-        void displayReport()
+        void displayReport() override
         {
             cout << "Displaying report for thermometer.....\n\n";
         }
@@ -25,12 +25,12 @@ class Thermometer: public WeatherSensor
 class Barometer: public WeatherSensor
 {
     public:
-        void readData()
+        void readData() override
         {
             cout << "Reading data for barometer.....\n";
         }
 
-        void displayReport()
+        void displayReport() override
         {
             cout << "Displaying report for barometer.....\n\n";
         }
