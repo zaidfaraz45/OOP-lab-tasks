@@ -20,7 +20,7 @@ class AirFreight: public Shipment
 
         void estimateDeliveryTime() override
         {
-            cout << "Estimating delivery time for Air Freight.....\n";
+            cout << "Estimating delivery time for Air Freight.....\nAir Freight estimated delivery time: 2-3 days\n";
         }
 
         void showDetails() override
@@ -38,7 +38,7 @@ class GroundShipment: public Shipment
 
         void estimateDeliveryTime() override
         {
-            cout << "Estimating delivery time for Ground Shipment.....\n";
+            cout << "Estimating delivery time for Ground Shipment.....\nGround Shipment estimated delivery time: 5-7 days\n";
         }
 
         void showDetails() override
