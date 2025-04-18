@@ -2,6 +2,7 @@
 using namespace std;
 
 class Patient
+
 {
     protected:
         string name;
