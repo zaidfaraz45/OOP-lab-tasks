@@ -21,7 +21,7 @@ class AirFreight: public Shipment
         void estimateDeliveryTime() override
         {
             cout << "Estimating delivery time for Air Freight.....\nAir Freight estimated delivery time: 2-3 days\n";
-        }
+        } 
 
         void showDetails() override
         {
