@@ -44,5 +44,7 @@ int main()
         cout << "Certification ->" << certification << endl;
     }
 
+    file.close();
+
     return 0;
 }

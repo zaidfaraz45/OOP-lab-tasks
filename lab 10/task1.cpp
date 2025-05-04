@@ -21,5 +21,7 @@ int main()
         cout << line << endl;
     }
 
+    file.close();
+
     return 0;
 }
