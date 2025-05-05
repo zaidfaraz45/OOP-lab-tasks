@@ -13,7 +13,7 @@ int main()
     if (!file.is_open())
     {
         cerr << "File could not be opened!\n";
-        return 0;
+        return 1;
     }
 
     string line;

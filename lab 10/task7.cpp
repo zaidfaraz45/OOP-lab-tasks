@@ -9,7 +9,7 @@ int main()
     if(!file.is_open())
     {
         cerr << "Unable to open file!\n";
-        return 0;
+        return 1;
     }
 
     file << "Sensor 1: 25.5 C\nSensor 2: 98.1 %RH \n";

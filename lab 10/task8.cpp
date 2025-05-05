@@ -10,7 +10,7 @@ int main()
     if(!outFile.is_open())
     {
         cerr << "Unable to open file!\n";
-        return 0;
+        return 1;
     }
 
     outFile << "AAAAABBBBBCCCCC";
@@ -22,7 +22,7 @@ int main()
     if (!file.is_open())
     {
         cerr << "File could not be opened!\n";
-        return 0;
+        return 1;
     }
 
     file.seekp(5, ios::beg);
@@ -36,7 +36,7 @@ int main()
     if (!inFile.is_open())
     {
         cerr << "File could not be opened!\n";
-        return 0;
+        return 1;
     }
 
     string fileData;
