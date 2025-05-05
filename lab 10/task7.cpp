@@ -17,5 +17,7 @@ int main()
 
     cout << position << endl;
 
+    file.close();
+
     return 0;
 }
