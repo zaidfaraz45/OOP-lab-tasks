@@ -9,7 +9,7 @@ class DimensionMismatchException : public exception
 public:
     DimensionMismatchException(int r1, int c1, int r2, int c2)
     {
-        message = "DimensionMismatchException - Matrices must have same dimensions (2x2 vs 3x3)!\n";
+        message = "Matrices must have same dimensions (2x2 vs 3x3)!\n";
     }
 
     const char *what() const noexcept override
