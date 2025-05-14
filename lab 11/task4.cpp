@@ -40,8 +40,6 @@ public:
 template <typename T>
 class DatabaseConnector
 {
-    T dbName;
-
 public:
     void connect(T dbName)
     {
