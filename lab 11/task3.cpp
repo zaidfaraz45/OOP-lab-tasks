@@ -27,7 +27,7 @@ int main()
         cout << "Attempting to convert " << celsius << "C\n";
         convertToFahrenheit(-300);
     }   
-    catch(InvalidTemperatureException &e)
+    catch(const InvalidTemperatureException &e)
     {
         cout << e.what();
     }
